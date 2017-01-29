@@ -19,14 +19,13 @@ class casino(object):
         self.employee = employee
         self.customer = customer
 
-
+# then we create the class employee
 class employee(casino):
     def __init__(self,money_begin,money_won):
         self.money_begin = money_begin
         self.money_won = money_won
 
 
-# première sous classe le barman qui aura une fonction bar qui gagnera wage +tips
 class barman(employee) :
     def __init__(self,money_won,money_beginning):
       self.money_won = money_won
@@ -35,7 +34,6 @@ class barman(employee) :
         return wage
 
 
-# deuxième sous classe le croupier qui gagne wage + 5% gain
 class croupier(employee):
     def __init__(self,money_begin,money_won):
       self.money_won = money_won
@@ -44,14 +42,13 @@ class croupier(employee):
         return wage
 
 
-# le casino qui gagne  95% gains + les boissons- les pertes+ et les wages
 class casino_banq(employee):
     def __init__(self,money_begin,money_won):
       self.money_won = money_won
     def money_beginning(self):
         return money_begin_casino - number_of_barmen * wage - (number_of_craps + number_of_roulette) * 200 - number_of_bachelor * money_bachelor
 
-
+#we create the customer class
 class customer(casino):
     def __init__(self, money,money_beginning,amount_betted):
       self.money = money
@@ -59,7 +56,6 @@ class customer(casino):
       self.money_bet = money_bet
 
 
-# client habitue qui depense aux trois fonctions
 class regular(customer):
     def __init__(self, money, amount_betted):
       self.money = money
@@ -72,7 +68,6 @@ class regular(customer):
         return(money_beginning)
 
 
-# client premiere fois qui depense aux trois fonctions
 class one_time(customer):
     def __init__(self,money, money_begining, amount_betted):
       self.money = money
@@ -85,7 +80,6 @@ class one_time(customer):
         return money_beginning
 
 
-# client fetard qui depense aux trois fonctions
 class bachelor(customer):
     def __init__(self, money_arrival, amount_betted):
       self.money = random.randint(200, 500) + money_bachelor
