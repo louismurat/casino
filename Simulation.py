@@ -22,7 +22,6 @@ list_nombre = []
 for i, j in list_resultat:
     list_nombre.append(int(j))
 
-
 list_retour = np.array([30, 15, 10, 7.5, 6, 4, 6, 7.5, 10, 15, 30])
 print(list_nombre)
 print(list_nombre*list_retour)
