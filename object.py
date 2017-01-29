@@ -12,6 +12,7 @@ number_of_bachelor = 10
 mise_roulette = random.randint(0, 36)
 mise_craps = random.randint(0, 12)
 
+
 # First we define what we need for the casino : customer and employee
 class casino(object):
     def __init__(self, employee, customer):
